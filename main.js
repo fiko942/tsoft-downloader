@@ -3,13 +3,13 @@ const { response } = require('express')
 const express = require('express')
 const app = express()
 const yt = require('ytdl-core')
+const cors = require('cors')
 
 
+app.use(cors())
 app.get('/:id', async (req, res) => {
     res.header = 'Access-Control-Allow-Origin', '*'
-    res.header = 'Access-Control-Allow-Credentials', true
     res.header = 'Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS'
-    res.header = 'Access-Control-Allow-Headers', 'Content-Type'
     try {
         const referrer = req.headers.referrer || req.headers.referer
         const data = await yt.getInfo(req.params.id)
