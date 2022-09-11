@@ -75,6 +75,17 @@ export function Query() {
     }, [error_show])
 
     useEffect(() => {
+        const el = document.querySelector('.container .title')
+        if (error_show || res_show) {
+            if (!el.hasAttribute('style')) {
+                el.setAttribute('style', 'margin-top: 30px !important;')
+            }
+        } else {
+            el.removeAttribute('style')
+        }
+    }, [error_show, res_show])
+
+    useEffect(() => {
         const el = document.querySelector('.res')
         if (res_show) {
             el.classList.remove('d-none')
@@ -88,6 +99,9 @@ export function Query() {
     useEffect(() => {
         if (q !== '' && q !== null && q !== undefined) {
             getYTData(q.split('&')[0])
+        } else {
+            set_res_show(false)
+            set_error_show(false)
         }
     }, [q])
 
@@ -142,6 +156,10 @@ export function Query() {
                 <div className='res-error'>
                     <div className='title'>{ error_message }</div>
                     <img src={IlustrationError} alt="Youtube Downloader | Wiji Fiko Teren - Result error" title="Youtube Downloader | Wiji Fiko Teren - Result error" />
+                </div>
+
+                <div className='float-message'>
+                    
                 </div>
             </div>
         </div>
