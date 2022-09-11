@@ -1,0 +1,23 @@
+{
+  "name": "backlink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiko942/backlink.git"
+  },
+  "author": "Wiji Fiko Teren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fiko942/backlink/issues"
+  },
+  "homepage": "https://github.com/fiko942/backlink#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "ytdl-core": "^4.11.2"
+  }
+}
