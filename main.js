@@ -6,7 +6,10 @@ const yt = require('ytdl-core')
 const cors = require('cors')
 
 
-app.use(cors())
+app.use(cors({
+    credentials: true,
+    origin: true
+}))
 app.get('/:id', async (req, res) => {
     res.header = 'Access-Control-Allow-Origin', '*'
     res.header = 'Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS'
