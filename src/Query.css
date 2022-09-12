@@ -170,3 +170,74 @@ html {
 .res .items .download button:hover {
     transform: translate(-20px);
 }
+
+.float-message {
+    background: #fff;
+    border-radius: 3px;
+    padding: 10px;
+    position: fixed;
+    z-index: 999999;
+    bottom: 10px;
+    left: 10px;
+    width: fit-content;
+    max-width: 50%;
+}
+
+.float-message .avatar {
+    max-width: 100%;
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+.float-message .head {
+    display: flex;
+    align-items: center;
+}
+
+.float-message .head > div:nth-child(2) {
+    margin-left: 10px;
+}
+
+.float-message .head .name {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.float-message .head .email {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.float-message .body .role {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.float-message .close {
+    top: 10px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    border: none !important;
+    outline: none !important;
+    position: absolute;
+}
+
+.float-message .close::after {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    content: "\274c"; /* use the hex value here... */
+    font-size: 15px; 
+    color: #000;
+}
+
+.float-message.closed {
+    left: -1000px;
+}

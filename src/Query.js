@@ -62,6 +62,13 @@ export function Query() {
     const [v_view, set_v_view] = useState(0)
     const [v_duration, set_v_duration] = useState(0)
     const [v_items, set_v_items] = useState([])
+    const [message_show, set_message_show] = useState(true)
+
+    useEffect(() => {
+        if (!message_show) {
+            document.querySelector('.float-message').classList.add('closed')
+        }
+    }, [message_show])
 
     useEffect(() => {
         const el = document.querySelector('.res-error')
@@ -159,6 +166,24 @@ export function Query() {
                 </div>
 
                 <div className='float-message'>
+                    <button className='close' onClick={() => {
+                        set_message_show(false)
+                    }}></button>
+                    <div className='head'>
+                        <div>
+                            <img className='avatar' src='https://avatars.githubusercontent.com/u/84434815?s=400&u=5541d950181e7f5a9dab78775f68a41aa1e5e834&v=4' alt='Wiji Fiko Teren' title='Wiji Fiko Teren' />
+                        </div>
+                        <div>
+                            <div className='name'>Wiji Fiko Teren</div>
+                            <div className='email'>tobellord@gmail.com</div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div className='body'>
+                        <div className='role'>~ Developer at Tobelsoft</div>
+                        <div className='role'>~ Programmer at Kampung Songo</div>
+                        <div className='role'>~ 1st National Kompetition KIDS (Kompetisi Inovasi Digital Siswa) 2022 by UMM</div>
+                    </div>
                     
                 </div>
             </div>
